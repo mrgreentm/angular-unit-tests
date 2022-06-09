@@ -41,4 +41,28 @@ describe('BankingComponent', () => {
     expect(component.getPoupanca).toEqual(160)
     expect(component.getCarteira).toEqual(570)
   });
+
+  it('should donts acceppt string values on parameter setDepositar', () => {
+    expect(component.setDepositar('string')).not.toBeTruthy()
+    expect(component.getPoupanca).toEqual(150)
+    expect(component.getCarteira).toEqual(580)
+  });
+
+  it('should donts acceppt less than values on parameter setDepositar', () => {
+    expect(component.setDepositar('581')).not.toBeTruthy()
+    expect(component.getPoupanca).toEqual(150)
+    expect(component.getCarteira).toEqual(580)
+  });
+
+  it('should donts acceppt string values on parameter setSacar', () => {
+    expect(component.setSacar('string')).not.toBeTruthy()
+    expect(component.getPoupanca).toEqual(150)
+    expect(component.getCarteira).toEqual(580)
+  });
+
+  it('should donts acceppt less than values on parameter setSacar', () => {
+    expect(component.setSacar('151')).not.toBeTruthy()
+    expect(component.getPoupanca).toEqual(150)
+    expect(component.getCarteira).toEqual(580)
+  });
 });
