@@ -1,4 +1,4 @@
-import { Investiments } from './../interfaces/investiments.interface';
+import { Investiments } from '../../interfaces/investiments.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

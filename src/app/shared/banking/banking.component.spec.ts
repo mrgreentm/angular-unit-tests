@@ -1,4 +1,4 @@
-import { ListComponent } from './../investments/list/list.component';
+import { ListComponent } from '../investments/components/list/list.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BankingComponent } from './banking.component';
