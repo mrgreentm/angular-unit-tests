@@ -3,19 +3,24 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BankingComponent } from './banking.component';
 import { waitForAsync } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 
 describe('BankingComponent', () => {
   let component: BankingComponent;
   let fixture: ComponentFixture<BankingComponent>;
+  let httpClient: HttpClient;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [BankingComponent, ListComponent],
+      imports: [HttpClientTestingModule],
     }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(BankingComponent);
+    httpClient = TestBed.inject(HttpClient);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -72,8 +77,8 @@ describe('BankingComponent', () => {
     el.querySelector('#input-depositar').value = '10';
     el.querySelector('#depositar').click();
     fixture.detectChanges(); //detectar as mudanças no DOM
-    const carteira = el.querySelector('#get-carteira')
-    const poupanca = el.querySelector('#get-poupanca')
+    const carteira = el.querySelector('#get-carteira');
+    const poupanca = el.querySelector('#get-poupanca');
     expect(component.getPoupanca).toEqual(160);
     expect(component.getCarteira).toEqual(570);
     expect(carteira.innerHTML).toEqual('570');
