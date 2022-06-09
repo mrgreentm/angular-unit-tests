@@ -29,7 +29,7 @@ export class ListComponent implements OnInit {
   }
 
   list(): void {
-    this.listService.list().subscribe((res) => {
+    this.listService.list().then((res) => {
       this.investiments = res
     });
   }

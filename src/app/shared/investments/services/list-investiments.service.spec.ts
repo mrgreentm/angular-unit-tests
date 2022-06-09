@@ -39,7 +39,7 @@ describe('ListInvestimentsService', () => {
   });
 
   it('should be load all investiments', (done) => {
-    service.list().subscribe((res: Investiments[]) => {
+    service.list().then((res: Investiments[]) => {
       expect(res[0].name).toEqual('Banco 1');
       done();
     });

@@ -11,7 +11,7 @@ export class ListInvestimentsService {
     'https://raw.githubusercontent.com/troquatte/fake-server/main/investiments-all.json';
   constructor(private httpClient: HttpClient) {}
 
-  list(): Observable<Investiments[]> {
-    return this.httpClient.get(this.url) as Observable<Investiments[]>;
+  list(): Promise<any> {
+    return this.httpClient.get(this.url).toPromise();
   }
 }
