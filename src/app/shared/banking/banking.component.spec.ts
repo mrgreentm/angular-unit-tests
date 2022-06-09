@@ -1,3 +1,4 @@
+import { ListComponent } from './../investments/list/list.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BankingComponent } from './banking.component';
@@ -9,7 +10,7 @@ describe('BankingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [BankingComponent],
+      declarations: [BankingComponent, ListComponent],
     }).compileComponents();
   }));
 
