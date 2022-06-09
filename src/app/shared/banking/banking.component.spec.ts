@@ -32,14 +32,12 @@ describe('BankingComponent', () => {
 
   it('should poupanca = 140 when calls setSacar("10")', () => {
     component.setSacar('10')
-    fixture.detectChanges()
     expect(component.getPoupanca).toEqual(140)
     expect(component.getCarteira).toEqual(590)
   });
 
   it('should poupanca = 160 when calls setDepositar("10")', () => {
     component.setDepositar('10')
-    fixture.detectChanges()
     expect(component.getPoupanca).toEqual(160)
     expect(component.getCarteira).toEqual(570)
   });
